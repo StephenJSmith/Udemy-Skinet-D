@@ -1,0 +1,10 @@
+<pagination
+[boundaryLinks]="true"
+[totalItems]="shopParams.totalCount"
+[itemsPerPage]="shopParams.pageSize"
+(pageChanged)="onPagerChanged($event)"
+previousText="&lsaquo;"
+nextText="&rsaquo;"
+firstText="&laquo;"
+lastText="&raquo;"
+></pagination>

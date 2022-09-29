@@ -1,0 +1,12 @@
+<header>
+  <span *ngIf="shopParams.canShowItems">
+    Showing
+    <strong>{{shopParams.pageFromTo}}</strong> of
+    <strong>{{shopParams.totalCount}}</strong> Results
+  </span>
+
+  <span *ngIf="!shopParams.canShowItems">
+    There are 
+    <strong>0</strong> results for this filter
+  </span>
+</header>
