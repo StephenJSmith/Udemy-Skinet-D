@@ -1,0 +1,32 @@
+<div class="form-label-group">
+  <input #input
+    [ngClass]="inputValidationClass"
+    [type]="type"
+    (input)="onChange($event.target.value)"
+    (blur)="onTouched()"
+    id="{{label}}" 
+    class="form-control" 
+    placeholder="{{label}}"
+  >
+  <div *ngIf="isControlStatusPending"
+    class="fa fa-spinner fa-spin loader"
+  ></div>
+
+  <label for="{{label}}">{{label}}</label>
+  <div *ngIf="canShowTouchedErrorMessage"
+    class="invalid-feedback">
+    <span *ngIf="isRequiredError">
+      {{label}} is required
+    </span>
+    <span *ngIf="isPatternError">
+      Invalid email address
+    </span>
+  </div>
+
+  <div *ngIf="canShowDirtyErrorMessage"
+    class="invalid-feedback d-block">
+    <span *ngIf="isEmailExistsError">
+      Email address is in use
+    </span>
+  </div>
+</div>
